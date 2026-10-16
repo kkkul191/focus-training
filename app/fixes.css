@@ -1,0 +1,86 @@
+.chart-card,
+.chart-wrap {
+  min-width: 0;
+}
+
+.chart-wrap {
+  min-height: 0;
+}
+
+.training-module-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.training-module {
+  padding: 30px;
+}
+
+.training-module > p:not(.eyebrow) {
+  min-height: 48px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.module-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.module-latest {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 25px 0 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.module-latest span { color: var(--muted); }
+.module-note { margin-top: 20px; text-align: center; color: var(--muted); font-size: 12px; }
+.cognitive-intro { margin-top: 25px; padding: 34px; text-align: center; }
+.cognitive-intro > .text-button { display: flex; margin: -10px 0 28px; }
+.cognitive-intro > p:not(.eyebrow):not(.example-caption) { max-width: 560px; margin: 0 auto 25px; color: var(--muted); line-height: 1.7; }
+.example-stroop { margin: 28px 0 5px; font: 600 70px/1 Georgia, serif; }
+.example-caption { color: var(--muted); font-size: 12px; margin-bottom: 28px; }
+.cognitive-stage { min-height: 650px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.cognitive-progress { align-self: stretch; display: flex; justify-content: space-between; color: var(--muted); font-size: 10px; letter-spacing: .16em; border-bottom: 1px solid var(--line); padding: 0 4px 14px; margin-bottom: auto; }
+.stroop-word { font: 600 clamp(82px, 15vw, 132px)/1 Georgia, "Songti SC", serif; margin: 80px 0 20px; }
+.cognitive-stage > p { color: var(--muted); }
+.stroop-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: min(560px, 100%); margin: 30px 0 45px; }
+.stroop-options button { min-height: 58px; border: 1px solid var(--line); border-radius: 11px; background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 9px; }
+.stroop-options button:hover { border-color: var(--accent); background: var(--accent-soft); }
+.color-dot { width: 11px; height: 11px; border-radius: 50%; }
+.stroop-red { color: #b6514b; }.stroop-blue { color: #3f6fa2; }.stroop-green { color: #4f8063; }.stroop-amber { color: #c08a28; }
+.stroop-bg-red { background: #b6514b; }.stroop-bg-blue { background: #3f6fa2; }.stroop-bg-green { background: #4f8063; }.stroop-bg-amber { background: #c08a28; }
+.go-examples { display: flex; justify-content: center; gap: 30px; margin: 30px 0; color: var(--muted); font-size: 12px; }
+.go-examples span { display: flex; align-items: center; gap: 9px; }
+.go-cue, .no-go-cue { width: 28px; height: 28px; display: inline-grid; place-items: center; border-radius: 50%; }
+.go-cue { background: var(--accent); }
+.no-go-cue { background: var(--sand); color: var(--surface-strong); font-size: 22px; font-style: normal; }
+.go-stage { cursor: pointer; user-select: none; }
+.go-cue-wrap { height: 250px; display: grid; place-items: center; margin-top: auto; }
+.go-cue.large, .no-go-cue.large { width: 170px; height: 170px; box-shadow: 0 20px 60px color-mix(in srgb, var(--accent) 15%, transparent); }
+.no-go-cue.large { font-size: 90px; box-shadow: 0 20px 60px color-mix(in srgb, var(--sand) 15%, transparent); }
+.gap-mark { color: var(--muted); font-size: 38px; font-weight: 300; }
+.keyboard-hint { margin: 20px 0 auto; padding: 7px 15px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); font-size: 10px; letter-spacing: .16em; }
+.cognitive-summary { padding: 32px; margin-top: 25px; text-align: center; }
+.cognitive-summary > .stats-grid { margin: 28px 0 20px; text-align: left; }
+.quiet-explanation { color: var(--muted); font-size: 12px; line-height: 1.7; }
+
+@media (max-width: 760px) {
+  .training-module-grid { grid-template-columns: 1fr; }
+  .training-module > p:not(.eyebrow) { min-height: 0; }
+  .stroop-options { grid-template-columns: repeat(2, 1fr); }
+  .cognitive-stage { min-height: calc(100vh - 130px); }
+  .go-cue.large, .no-go-cue.large { width: 135px; height: 135px; }
+}
